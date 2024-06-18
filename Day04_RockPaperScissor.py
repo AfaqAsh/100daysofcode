@@ -43,16 +43,19 @@ scissors = """
 choices = [rock, paper, scissors]
 
 player_choice = int(input("Select your option. Enter 0 for Rock, 1 for Paper, 2 for Scissors: "))
-print(f'Your choice \n {choices[player_choice]}')
-computer_choice = random.randint(0,2)
-print(f'Computer choice \n {choices[computer_choice]}')
-
-if player_choice == computer_choice:
-    print("Draw")
-elif (player_choice == 0 and computer_choice == 2) or (player_choice == 1 and computer_choice == 0) or (player_choice == 2 and computer_choice == 1):
-    print("You win")
+if player_choice >=3 or player_choice <0:
+    print("You input an invalid number and lost")
 else:
-    print("You lose")
+    print(f'Your choice \n {choices[player_choice]}')
+    computer_choice = random.randint(0,2)
+    print(f'Computer choice \n {choices[computer_choice]}')
+
+    if player_choice == computer_choice:
+        print("Draw")
+    elif (player_choice == 0 and computer_choice == 2) or (player_choice == 1 and computer_choice == 0) or (player_choice == 2 and computer_choice == 1):
+        print("You win")
+    else:
+        print("You lose")
 
 
 # * Revised the concept of modules. Creating different files containing different codes and using in a single file using import
