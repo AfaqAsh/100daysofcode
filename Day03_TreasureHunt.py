@@ -20,4 +20,4 @@ if (first_choice.lower() == "left"):
 else:
     print("You fell into a hole after taking the right turn and have died.")
     
-# On the Day03, I did not learn anything new. Just revised the .count() for strings to count the occurence of characters
+# * On the Day03, I did not learn anything new. Just revised the .count() for strings to count the occurence of characters
