@@ -37,10 +37,12 @@ def main_game():
     
     
 main_game()
-# outside = 1
+# outside = 1231
 
 # def inc_out():
-#     outside = outside + 1
-#     return outside
+#     print(outside)
+#     # outside = 32
+#     print(outside)
 
-# print(inc_out())
+# inc_out()
+# print(outside)
