@@ -30,8 +30,19 @@ while not game_off:
     snakes.move()
     
     if snakes.head.distance(food) < 15:
-        print("Food collected")
+        score.add_score()
         food.spawn()
+        snakes.grow()
+        
+    for segment in snakes.snakes[1:]:
+        if snakes.head.distance(segment) < 10:
+            game_off = True
+            score.game_over()
+    
+    if ((snakes.head.xcor() > 290) or (snakes.head.xcor() < -290) or (snakes.head.ycor() > 290) or (snakes.head.ycor() < -290)):
+        # print("game over")
+        score.game_over()
+        game_off = True
 
 
 screen.exitonclick()
