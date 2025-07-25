@@ -12,7 +12,7 @@ for i in range(6):
     turtle = Turtle()
     turtle.penup()
     turtle.shape("turtle")
-    turtle.color(random.choice(colors))
+    turtle.color(colors[i])
     turtle.goto(-240, y)
     y += 50
     turtles.append(turtle)
