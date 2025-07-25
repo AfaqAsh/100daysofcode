@@ -10,6 +10,7 @@ class Snake():
         self.snakes = []
         self.starting_postion = [(0.0,0.0),(-20.0,0.0),(-40.0,0.0)]
         self.create_snake()
+        self.head = self.snakes[0]
 
             
     def create_snake(self):
@@ -24,20 +25,20 @@ class Snake():
         for segment in range(len(self.snakes) -1, 0, -1):
             old_coord = self.snakes[segment - 1].pos()
             self.snakes[segment].goto(old_coord)
-        self.snakes[0].forward(20)
+        self.head.forward(20)
         
     def turn_up(self):
-        if self.snakes[0].heading() != DOWN:
-            self.snakes[0].setheading(UP)
+        if self.head.heading() != DOWN:
+            self.head.setheading(UP)
         
     def turn_left(self):
-        if self.snakes[0].heading() != RIGHT:
-            self.snakes[0].setheading(LEFT)
+        if self.head.heading() != RIGHT:
+            self.head.setheading(LEFT)
         
     def turn_down(self):
-        if self.snakes[0].heading() != UP:
-            self.snakes[0].setheading(DOWN)
+        if self.head.heading() != UP:
+            self.head.setheading(DOWN)
         
     def turn_right(self):
-        if self.snakes[0].heading() != LEFT:
-            self.snakes[0].setheading(RIGHT)
+        if self.head.heading() != LEFT:
+            self.head.setheading(RIGHT)
