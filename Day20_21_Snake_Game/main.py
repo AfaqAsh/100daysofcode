@@ -38,11 +38,14 @@ while not game_off:
         if snakes.head.distance(segment) < 10:
             game_off = True
             score.game_over()
+            snakes.reset_snake()
+            
     
     if ((snakes.head.xcor() > 290) or (snakes.head.xcor() < -290) or (snakes.head.ycor() > 290) or (snakes.head.ycor() < -290)):
         # print("game over")
         score.game_over()
-        game_off = True
+        snakes.reset_snake()
+        # game_off = True
 
 
 screen.exitonclick()
