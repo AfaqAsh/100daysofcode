@@ -10,11 +10,10 @@ with open("./Input/Names/invited_names.txt") as data:
 for name in content:
     letter_name = f'letter_for_{name}'
     first_line = f'Dear {name}\n'
-    letter[0] = first_line
+    letter[0] = first_line #
     new_letter = ''.join(letter)
     with open(f"./Output/ReadyToSend/{letter_name}", mode='w') as data:
         data.write(new_letter)
-    # letter = letter.replace("[name]", name)
     print(letter)
 #Save the letters in the folder "ReadyToSend".
     
