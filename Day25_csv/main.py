@@ -14,7 +14,7 @@ import pandas as pd
 #         temperatures.append(int(row[1]))
 #     print(temperatures)
 
-content = pd.read_csv('002 weather-data.csv')
+# content = pd.read_csv('002 weather-data.csv')
 # print(content['temp'])
 # print(type(content))
 # data_dict = content.to_dict()
@@ -34,11 +34,26 @@ content = pd.read_csv('002 weather-data.csv')
 # mond = content[content['temp'] == content['temp'].max()]
 # print(mond)
 
-data_dict = {
-    'students': ['Alicia', 'Maelle', 'Verso'],
-    'ages': [17,17,26]
+# data_dict = {
+#     'students': ['Alicia', 'Maelle', 'Verso'],
+#     'ages': [17,17,26]
+# }
+
+# data = pd.DataFrame(data_dict)
+# data.to_csv('new_csv.csv')
+# print(data)
+
+squirrels = pd.read_csv("Central-Park-Squirrel-Census-Squirrel-Data.csv")
+new_squirrels = squirrels['Primary Fur Color'].value_counts()
+dict_data = {
+    'Fur Color': ['Gray', 'Cinnamon', 'Black'],
+    'Count' : []
 }
 
-data = pd.DataFrame(data_dict)
-data.to_csv('new_csv.csv')
-print(data)
+for color in new_squirrels:
+    dict_data['Count'].append(color)
+
+# print(type(new_squirrels))
+colors = pd.DataFrame(dict_data)
+# colors.columns = ['Fur Color', 'Count']
+print((colors))
