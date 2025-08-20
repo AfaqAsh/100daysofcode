@@ -33,10 +33,7 @@ def add_name(name):
 def game_loop():
     guess = screen.textinput("Take a guess", "Guess the state: ")
     if guess == 'exit':
-        missed_states = []
-        for state in state_col:
-            if state not in guessed_states:
-                missed_states.append(state)
+        missed_states = [state for state in state_col if state not in guessed_states]
         
         new_data = pd.DataFrame(missed_states)
         new_data.to_csv('States To Learn.csv')
@@ -47,7 +44,8 @@ def game_loop():
     if guess.capitalize() in states.values:
         guessed_states.append(guess.capitalize())
         add_name(guess.capitalize())
-        return True
+        
+    return True
     
 while game_loop():
     pass
